@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IJEDA - Premium African Raw Materials Sourcing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0A0F24;
+            --gold: #D4AF37;
+            --gray: #F2F2F2;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--white);
+            color: var(--navy);
+            line-height: 1.6;
+        }
+
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--navy);
+            padding: 1.5rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: var(--gold);
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background-color: var(--navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 0 5%;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23D4AF37' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--gold);
+            color: var(--navy);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--gold);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Floating Shapes */
+        .shape {
+            position: absolute;
+            background-color: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .shape-1 {
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            left: 5%;
+        }
+
+        .shape-2 {
+            width: 150px;
+            height: 150px;
+            bottom: 15%;
+            right: 10%;
+        }
+
+        .shape-3 {
+            width: 100px;
+            height: 100px;
+            top: 40%;
+            right: 20%;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Who We Are */
+        .who-we-are {
+            background-color: var(--white);
+        }
+
+        .who-we-are-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* What We Offer */
+        .what-we-offer {
+            background-color: var(--gray);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            color: var(--navy);
+        }
+
+        /* Trusted Sourcing */
+        .trusted-sourcing {
+            background-color: var(--white);
+            text-align: center;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-left: 4px solid var(--gold);
+            text-align: left;
+        }
+
+        .quote-author {
+            font-weight: 600;
+            color: var(--gold);
+        }
+
+        /* Pages */
+        .page-header {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 8rem 5% 3rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            height: 200px;
+            background-color: var(--gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+
+        .product-content {
+            padding: 1.5rem;
+        }
+
+        .product-content h3 {
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .product-content p {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+
+        /* About Content */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-section {
+            margin-bottom: 3rem;
+        }
+
+        .about-section h3 {
+            color: var(--navy);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .about-section p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Contact Form */
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--navy);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 5%;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            section {
+                padding: 3rem 5%;
+            }
+            
+            .page-header {
+                padding: 6rem 5% 2rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">IJEDA</a>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        
+        <div class="hero-content">
+            <h1 class="playfair">Ijeda — Where Africa’s Natural Resources Meet Global Demand.</h1>
+            <p>We source, refine, and deliver premium raw materials from trusted African producers to buyers worldwide — with transparency, quality assurance, and U.S.-based reliability at every step.</p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn btn-primary">Explore Our Products</a>
+                <a href="#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who We Are -->
+    <section class="who-we-are">
+        <div class="section-title">
+            <h2>Who We Are</h2>
+        </div>
+        <div class="who-we-are-content">
+            <p>Ijeda is a U.S.-based distributor specializing in premium natural commodities sourced from across West Africa. We work directly with vetted producers, cooperatives, and processing partners to deliver consistent quality, verified documentation, and dependable supply throughout the year.</p>
+        </div>
+    </section>
+
+    <!-- What We Offer -->
+    <section class="what-we-offer">
+        <div class="section-title">
+            <h2>What We Offer</h2>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">✓</div>
+                <h3>Quality-verified Materials</h3>
+                <p>Every shipment undergoes rigorous quality checks and comes with comprehensive documentation.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🤝</div>
+                <h3>Direct Sourcing</h3>
+                <p>We work directly with African producers, cooperatives, and processing partners for authentic quality.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🇺🇸</div>
+                <h3>U.S. Presence</h3>
+                <p>Reliable communication and logistics support from our U.S.-based operations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted Sourcing -->
+    <section class="trusted-sourcing">
+        <div class="section-title">
+            <h2>Trusted Sourcing, Modern Standards</h2>
+        </div>
+        <div class="who-we-are-content">
+            <p>We bridge African excellence with global markets by combining traditional production methods with modern quality control. Every shipment is supported by proper documentation including CoA, MSDS, and origin certificates.</p>
+        </div>
+        <div class="quote">
+            <p>"Africa has the resources. The world has the demand. We build the bridge."</p>
+            <p class="quote-author">— Ijeda</p>
+        </div>
+        <a href="#contact" class="btn btn-primary">Partner With Us</a>
+    </section>
+
+    <!-- Products Page -->
+    <section id="products" class="page-header">
+        <h1>Our Premium Products</h1>
+        <p>Natural raw materials sourced directly from West African producers</p>
+    </section>
+
+    <section>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">Raw Shea Butter</div>
+                <div class="product-content">
+                    <h3>Raw Grade-A Shea Butter</h3>
+                    <p>Premium shea butter sourced from West African cooperatives. Naturally processed, rich in fatty acids, and suitable for cosmetics, skincare, and industrial applications.</p>
+                    <a href="#contact" class="btn btn-primary">Request Pricing & Specs</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">Cocoa Butter</div>
+                <div class="product-content">
+                    <h3>Cocoa Butter</h3>
+                    <p>High-quality cocoa butter with consistent aroma and color, ideal for chocolate production, skincare formulations, and pharmaceutical uses.</p>
+                    <a href="#contact" class="btn btn-primary">Request Pricing & Specs</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">Sesame Seeds</div>
+                <div class="product-content">
+                    <h3>Sesame Seeds</h3>
+                    <p>Clean, well-graded sesame seeds sourced from local farmers. Suitable for food manufacturing, oil extraction, and export packaging.</p>
+                    <a href="#contact" class="btn btn-primary">Request Pricing & Specs</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">Ginger</div>
+                <div class="product-content">
+                    <h3>Ginger (Dried / Fresh)</h3>
+                    <p>Pungent, aromatic ginger with high essential-oil content. Suitable for food processing, spices, teas, pharmaceuticals, and export trade.</p>
+                    <a href="#contact" class="btn btn-primary">Request Pricing & Specs</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">Hibiscus</div>
+                <div class="product-content">
+                    <h3>Hibiscus Flowers (Zobo / Roselle)</h3>
+                    <p>Deep red hibiscus calyxes, sun-dried and cleaned for tea blends, health drinks, extracts, and natural coloring.</p>
+                    <a href="#contact" class="btn btn-primary">Request Pricing & Specs</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">Marigold</div>
+                <div class="product-content">
+                    <h3>Marigold Flowers</h3>
+                    <p>Bright marigold petals with high lutein content, used in animal feed, natural pigments, and herbal extracts.</p>
+                    <a href="#contact" class="btn btn-primary">Request Pricing & Specs</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">Baobab</div>
+                <div class="product-content">
+                    <h3>Baobab Powder</h3>
+                    <p>Nutrient-rich baobab pulp powder used in supplements, food products, and natural wellness formulations.</p>
+                    <a href="#contact" class="btn btn-primary">Request Pricing & Specs</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">Moringa</div>
+                <div class="product-content">
+                    <h3>Moringa Leaves / Powder</h3>
+                    <p>High-protein moringa for nutrition blends, herbal supplements, and wellness products.</p>
+                    <a href="#contact" class="btn btn-primary">Request Pricing & Specs</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">Shea Nuts</div>
+                <div class="product-content">
+                    <h3>Shea Nuts</h3>
+                    <p>Raw shea nuts for processors seeking direct production inputs for butter extraction.</p>
+                    <a href="#contact" class="btn btn-primary">Request Pricing & Specs</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">Tiger Nuts</div>
+                <div class="product-content">
+                    <h3>Tiger Nuts</h3>
+                    <p>Clean, sorted tiger nuts used for drinks, snacks, and flour production.</p>
+                    <a href="#contact" class="btn btn-primary">Request Pricing & Specs</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">Palm Oil</div>
+                <div class="product-content">
+                    <h3>Palm Kernel Oil</h3>
+                    <p>Pure PKO suitable for soap manufacturing, cosmetics, and industrial applications.</p>
+                    <a href="#contact" class="btn btn-primary">Request Pricing & Specs</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">Leather</div>
+                <div class="product-content">
+                    <h3>Leather Hides (Tanned / Untanned)</h3>
+                    <p>High-quality hides sourced from West African producers for leather goods manufacturing.</p>
+                    <a href="#contact" class="btn btn-primary">Request Pricing & Specs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Page -->
+    <section id="about" class="page-header">
+        <h1>About IJEDA</h1>
+        <p>Connecting African excellence with global markets</p>
+    </section>
+
+    <section>
+        <div class="about-content">
+            <div class="about-section">
+                <h3>Our Story</h3>
+                <p>Ijeda was created from a simple belief: Africa's natural resources deserve fair representation, and global buyers deserve a trustworthy way to access them.</p>
+                <p>We stand between both worlds — making it easier for international companies to source high-quality raw materials while ensuring that the communities producing them benefit from ethical and consistent demand.</p>
+                <p>We began with a commitment to do business differently. Rather than acting only as traders, we build relationships with the farmers, cooperatives, and processors who make these products possible.</p>
+                <p>Our goal is to help them reach global markets while giving buyers a dependable partner who handles quality, communication, and documentation with care.</p>
+            </div>
+            
+            <div class="about-section">
+                <h3>Our Mission</h3>
+                <p>To empower African producers by connecting them to global opportunities, while making sourcing simple, transparent, and reliable for international buyers. We focus on ethical practices, fair partnerships, and long-term growth for the communities behind the products.</p>
+            </div>
+            
+            <div class="about-section">
+                <h3>How We Work</h3>
+                <p>We work directly with trusted producers across West Africa, prioritizing authenticity, fair practices, and consistent product standards.</p>
+                <p>Every shipment is verified, documented, and quality-checked to ensure that what our clients receive meets the expectations of global markets.</p>
+                <p>With a U.S.-based presence, we provide smooth communication, dependable logistics support, and clear guidance at every step.</p>
+            </div>
+            
+            <div class="about-section">
+                <h3>Our Vision</h3>
+                <p>To help create a future where African natural resources are recognized, respected, and responsibly sourced — benefiting producers, buyers, and the environment.</p>
+                <p>We aim to build lasting bridges between Africa and the world through trade that is fair, sustainable, and forward-thinking.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Page -->
+    <section id="contact" class="page-header">
+        <h1>Contact Us</h1>
+        <p>Get in touch for bulk inquiries and partnership opportunities</p>
+    </section>
+
+    <section>
+        <div class="contact-container">
+            <div class="contact-info">
+                <p>For bulk inquiries, partnership requests, and product specifications, contact Ijeda directly. A member of our team will respond within 24–48 hours.</p>
+                <p><strong>Based in the United States — Serving clients worldwide.</strong></p>
+            </div>
+            <form>
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Company Name *</label>
+                    <input type="text" id="company" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone (Optional)</label>
+                    <input type="tel" id="phone">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 IJEDA. All rights reserved.</p>
+        <p>Premium African Raw Materials Sourcing</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple animation for floating shapes
+        const shapes = document.querySelectorAll('.shape');
+        shapes.forEach((shape, index) => {
+            setInterval(() => {
+                const moveX = Math.sin(Date.now() / 2000 + index) * 10;
+                const moveY = Math.cos(Date.now() / 1800 + index) * 10;
+                shape.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            }, 50);
+        });
+    </script>
+</body>
+</html>
